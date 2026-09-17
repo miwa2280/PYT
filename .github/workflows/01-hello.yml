@@ -1,0 +1,18 @@
+name: 01 - hello
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome step
+        run: echo "Привіт з кроку 1 🤲"
+
+      - name: More actions
+        run: |
+          echo "Привіт з кроку 2 🤲"
+          sleep 30
+          echo "Привіт з кроку - щось написане після сліпа"
