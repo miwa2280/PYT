@@ -6,17 +6,17 @@ class TestPasswordCheck:
     @pytest.mark.parametrize(
         'password, expected',
         [
-            ('Password12', True),     # Надежный
-            ('Secret', True),         # 8 символов
-            ('Qwer1!', True),         # 8 символов
-            ('Пароль!', True),       # Кириллица
-            ('Short1', False),         # Меньше 8 символов
-            ('Password123', False),     # Без спецсимвола
-            ('Password', False),    # Без цифр
-            ('123456789', False),     # Без букв
-            ('Password1', False),     # Есть пробел
-            ('   ', False),        # Только пробелы
-            ('', False),                # Пустая строка
+            ('Password12!', True),
+            ('SecretKey9#', True),
+            ('Qwer123!', True),
+            ('Пароль123!', True),
+            ('Short1', False),
+            ('Password123', False),
+            ('Password', False),
+            ('123456789', False),
+            ('Password1 ', False),
+            ('        ', False),
+            ('', False),
         ]
     )
     def test_is_password_strong_parametrized(self, password: str, expected: bool):
