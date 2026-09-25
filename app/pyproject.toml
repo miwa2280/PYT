@@ -8,6 +8,8 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "bcrypt==3.2.0",
+    "passlib[bcrypt]>=1.7.4",
     "pillow>=12.3.0",
     "pyjwt>=2.15.0",
     "pyotp>=2.10.0",
