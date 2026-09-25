@@ -20,7 +20,7 @@ print(uri)
 
 qr = qrcode.make(uri)
 qr.show()
-#qr.save("hh.png")
+# qr.save("hh.png")
 buffer = io.BytesIO()
 qr.save(buffer, format='PNG')
 print(111111)
