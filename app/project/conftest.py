@@ -1,32 +1,20 @@
-from pytest import fixture
-
-from models import BankAccount
-
-
-@fixture(scope='session')
-def bank_account_owner_name() -> str:
-    # print(33333333333333333333333333333333333)
-    return 'Vasyl'
+import pytest
+from cart import ShoppingCart
 
 
-@fixture()
-def deposit_amount_100() -> int:
-    # print(222222222222222222222222222222)
-    return 100
+@pytest.fixture
+def default_item() -> dict:
+    """Фікстура дефолтного товару"""
+    return {"name": "Apple", "price": 15.0, "quantity": 3}
 
 
-# @fixture(scope='function')
-# @fixture(scope='class')
-# @fixture(scope='session')
-@fixture(scope='module')
-def bank_account(bank_account_owner_name: str) -> BankAccount:
-    # print(111111111111111111111111111111111111111)
-    bank_account_created = BankAccount(owner=bank_account_owner_name)
-    return bank_account_created
-
-
-@fixture()
-def bank_account_2(bank_account_owner_name: str) -> BankAccount:
-    # print(444444444444444444444444444)
-    bank_account_created = BankAccount(owner=bank_account_owner_name)
-    return bank_account_created
+@pytest.fixture
+def cart_with_default_item(default_item: dict) -> ShoppingCart:
+    """Фікстура кошика з одним дефолтним товаром"""
+    cart = ShoppingCart()
+    cart.add_item(
+        name=default_item["name"],
+        price=default_item["price"],
+        quantity=default_item["quantity"],
+    )
+    return cart
