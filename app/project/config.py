@@ -25,3 +25,8 @@ PGHOST = os.getenv('PGHOST')
 PGDATABASE = os.getenv('PGDATABASE')
 PGUSER = os.getenv('PGUSER')
 PGPASSWORD = os.getenv('PGPASSWORD')
+
+PGHOST = os.getenv('PGHOST')
+PGDATABASE = os.getenv('PGDATABASE')
+PGUSER = os.getenv('PGUSER')
+PGPASSWORD = os.getenv('PGPASSWORD')
